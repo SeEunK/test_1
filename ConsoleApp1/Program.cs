@@ -1,6 +1,23 @@
 ﻿namespace ConsoleApp1
 {
-    // {2023.01.05 Modified class position /Alpha
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //{ 2023.01.05  Add new feature user input /Beta
+            string userInput = string.Empty;
+            Console.WriteLine("This program convert Cm to Inch");
+            Console.WriteLine("Input Cm Value : ");
+            userInput= Console.ReadLine();
+
+            int cmInput = 0;
+            int.TryParse(userInput, out cmInput);
+
+            Ruler ruler = new Ruler(cmInput);
+            //} 2023.01.05  Add new feature user input /Beta
+            ruler.Run();
+        }
+    }
     public class Ruler
     {
         private const float ONE_INCH = 2.54f;
@@ -19,14 +36,6 @@
         }
 
     }
-    // }2023.01.05 Modified class position /Alpha
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+    
 
-            Ruler ruler = new Ruler(10);
-            ruler.Run();
-        }
-    }
 }
